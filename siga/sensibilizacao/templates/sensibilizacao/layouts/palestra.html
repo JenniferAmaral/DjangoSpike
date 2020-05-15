@@ -1,0 +1,39 @@
+<!-- Estendemos do template base -->
+{% extends "sensibilizacao/layouts/base.html" %}
+
+<!-- Bloco que define o <title></title> da nossa página -->
+{% block title %}Página Inicial{% endblock %}
+
+<!-- Bloco de conteúdo da nossa página -->
+{% block conteudo %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Cadastrar Palestra</h5>
+                    <p class="card-text">
+                        Cadastre aqui uma nova <code>Palestra</code>.
+                    </p>
+                    <a href="{% url 'palestra_create' %}" class="btn btn-primary">
+                        Nova Palestra
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Lista de Palestras</h5>
+                    <p class="card-text">
+                        Veja aqui a lista de <code>Palestras</code> cadastradas.
+                    </p>
+                    <a href="{% url 'palestras' %}" class="btn btn-primary">
+                        Vá para Lista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

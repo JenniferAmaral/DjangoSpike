@@ -1,0 +1,22 @@
+<html>
+
+<body>
+  <h1>Lista de Desafios</h1>
+  <a href="{% url 'desafioInovacao_create' %}">Criar Novo Desafio</a>
+  {% if desafioInovacao_list %}
+  <ul>
+    {% for desafio in desafioInovacao_list %}
+    <li>
+      <a href="{{ desafioInovacao.get_absolute_url }}">{{ desafioInovacao.titulo }}</a> <a
+        href="{% url 'desafioInovacao-detail' desafioInovacao.pk %}">Detalhes</a> |<a
+        href="{% url 'desafioInovacao_update' desafioInovacao.pk %}">Editar</a>|<a
+        href="{% url 'desafioInovacao_delete' desafioInovacao.pk %}">Delete</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>Nenhuma desafio cadastrado.</p>
+  {% endif %}
+</body>
+
+</html>
