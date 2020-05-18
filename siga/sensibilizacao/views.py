@@ -5,14 +5,15 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Palestra
 from .models import Evento
 
+from sensibilizacao.forms import CreatePalestraForm
+
 # Palestras
 
 
 class PalestraListView(generic.ListView):
     model = Palestra
     context_object_name = 'palestras_list'
-    # template_name = 'sensibilizacao/palestra_list.html'
-    template_name = 'sensibilizacao/layouts/palestra.html'
+    template_name = 'sensibilizacao/palestras/palestra_list.html'
 
 
 class PalestraDetailView(generic.DetailView):
@@ -21,19 +22,23 @@ class PalestraDetailView(generic.DetailView):
 
 class PalestraCreate(CreateView):
     model = Palestra
-    fields = '__all__'
+    #fields = '__all__'
     success_url = reverse_lazy('palestras')
+    form_class = CreatePalestraForm
+    template_name = 'sensibilizacao/palestras/palestra_form.html'
 
 
 class PalestraUpdate(UpdateView):
     model = Palestra
     fields = '__all__'
     success_url = reverse_lazy('palestras')
+    template_name = 'sensibilizacao/palestras/palestra_update.html'
 
 
 class PalestraDelete(DeleteView):
     model = Palestra
     success_url = reverse_lazy('palestras')
+    template_name = 'sensibilizacao/palestras/palestra_confirm_delete.html'
 
 # Eventos
 

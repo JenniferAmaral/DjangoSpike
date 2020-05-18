@@ -15,7 +15,7 @@ urlpatterns = [
     path('palestras/<int:pk>/update/',
          PalestraUpdate.as_view(), name='palestra_update'),
 
-    path('palestras/<int:pk>/delete/',
+    path('palestras/<int:pk>/delete',
          PalestraDelete.as_view(), name='palestra_delete'),
 
     # Eventos
