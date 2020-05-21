@@ -4,10 +4,13 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Palestra
 from .models import Evento
-
 from sensibilizacao.forms import CreatePalestraForm
 
 # Palestras
+
+
+def menu(request):
+    return render(request, 'sensibilizacao/palestras/menu.html')
 
 
 class PalestraListView(generic.ListView):
@@ -18,6 +21,7 @@ class PalestraListView(generic.ListView):
 
 class PalestraDetailView(generic.DetailView):
     model = Palestra
+    template_name = 'sensibilizacao/palestras/palestra_detail.html'
 
 
 class PalestraCreate(CreateView):

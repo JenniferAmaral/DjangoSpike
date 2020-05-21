@@ -18,12 +18,12 @@
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
-                                <th>titulo</th>
-                                <th>descricao</th>
-                                <th>aprendizado</th>
-                                <th>data_inicio</th>
-                                <th>data_fim</th>
-                                <th>servidor</th>
+                                <th>Título</th>
+                                <th>Descrição</th>
+                                <th>Aprendizado</th>
+                                <th>Data inicial</th>
+                                <th>Data final</th>
+                                <th>Servidor</th>
                             </tr>
                         </thead>
 
@@ -38,6 +38,9 @@
                                 <td>{{ palestra.servidor }}</td>
 
                                 <td>
+                                    <a href="{% url 'palestra_detail' palestra.pk %}" class="btn btn-info">
+                                        Detalhes
+                                    </a>
                                     <a href="{% url 'palestra_update' palestra.pk %}" class="btn btn-info">
                                         Atualizar
                                     </a>

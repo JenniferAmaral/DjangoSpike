@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Detalhamento da Palestra{% endblock %}
+
+{% block conteudo %}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Lista de Palestras</h5>
+
+                <p><strong>Título:</strong> {{ palestra.titulo }}</a></p>
+                <p><strong>Descricao:</strong> {{ palestra.descricao }}</a></p>
+                <p><strong>Aprendizado:</strong> {{ palestra.aprendizado }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

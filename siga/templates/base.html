@@ -25,23 +25,62 @@
         <a class="navbar-brand" href="{% url 'palestras' %}">
             <img src="{% static 'sensibilizacao/img/logo.png' %}" height='45px'>
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudo-navbar"
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="conteudo-navbar" aria-expanded="false" aria-label="Ativar navegação">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="conteudo-navbar">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'palestras' %}">
-                        Página Inicial
-                    </a>
+                    <a class="nav-link" href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'eventos' %}">
-                        Eventos
-                    </a>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">Sensibilização</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'menu' %}">Sensibilização</a>
+                        <a class="dropdown-item" href="#">Prospecção</a>
+                        <a class="dropdown-item" href="#">Qualificação</a>
+                    </div>
                 </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">Seleção</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Recepção</a>
+                        <a class="dropdown-item" href="#">Avaliação</a>
+                        <a class="dropdown-item" href="#">Contratação</a>
+                    </div>
+                </li>
+
+            </ul>
+
+            <!-- <li class="nav-item active">
+                <a class="nav-link" href="{% url 'palestras' %}">
+                    Sensibilização
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'eventos' %}">
+                    Seleção
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'palestras' %}">
+                    Desenvolvimento
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'eventos' %}">
+                    Graduação
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'eventos' %}">
+                    Gerenciamento
+                </a>
+            </li> -->
             </ul>
         </div>
     </nav>
@@ -52,6 +91,15 @@
     <!-- Arquivos necessários para o Bootstrap -->
     <script src="{% static 'sensibilizacao/js/jquery.min.js' %}"></script>
     <script src="{% static 'sensibilizacao/js/bootstrap.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     <!-- Bloco de scripts -->
     {% block scripts %}{% endblock %}

@@ -1,14 +1,17 @@
 
 from django.urls import path
 from .views import *
+from sensibilizacao import views
 
 # app_name = 'sensibilizacao'
 
 urlpatterns = [
     # Palestras
+    path('sensibilizacao/', views.menu, name='menu'),
+
     path('palestras', PalestraListView.as_view(), name="palestras"),
 
-    path('palestras/<int:pk>', PalestraDetailView.as_view(), name='palestra-detail'),
+    path('palestras/<int:pk>', PalestraDetailView.as_view(), name='palestra_detail'),
 
     path('palestras/create/', PalestraCreate.as_view(), name='palestra_create'),
 
